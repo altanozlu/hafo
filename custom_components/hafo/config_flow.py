@@ -15,6 +15,7 @@ from .const import (
     DEFAULT_HISTORY_DAYS,
     DOMAIN,
     FORECAST_TYPE_HISTORICAL_SHIFT,
+    FORECAST_TYPE_SMOOTHED_SHIFT,
 )
 
 
@@ -83,6 +84,10 @@ class HafoConfigFlow(ConfigFlow, domain=DOMAIN):
                             selector.SelectOptionDict(
                                 value=FORECAST_TYPE_HISTORICAL_SHIFT,
                                 label="Historical Shift",
+                            ),
+                            selector.SelectOptionDict(
+                                value=FORECAST_TYPE_SMOOTHED_SHIFT,
+                                label="Smoothed Shift",
                             ),
                         ],
                         mode=selector.SelectSelectorMode.DROPDOWN,
